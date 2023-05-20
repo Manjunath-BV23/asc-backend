@@ -13,7 +13,7 @@ router.post('/login', async (req, res) => {
 });
 
 // Get all lists route
-app.get('/user', async (req, res) => {
+router.get('/user', async (req, res) => {
   try {
     const users = await User.findAll();
     res.status(200).json(users);
@@ -23,7 +23,7 @@ app.get('/user', async (req, res) => {
 });
 
 // Get all lists route
-app.get('/lists', async (req, res) => {
+router.get('/lists', async (req, res) => {
   try {
     const lists = await List.findAll();
     res.status(200).json(lists);
@@ -33,7 +33,7 @@ app.get('/lists', async (req, res) => {
 });
 
 // Get all tasks route
-app.get('/tasks', async (req, res) => {
+router.get('/tasks', async (req, res) => {
   try {
     const tasks = await Task.findAll();
     res.status(200).json(tasks);
