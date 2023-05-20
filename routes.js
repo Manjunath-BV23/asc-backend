@@ -13,14 +13,14 @@ router.post('/login', async (req, res) => {
 });
 
 // Get all lists route
-router.get('/user', async (req, res) => {
-  try {
-    const users = await User.findAll();
-    res.status(200).json(users);
-  } catch (error) {
-    res.status(500).json({ message: 'Failed to fetch users' });
-  }
-});
+// router.get('/user', async (req, res) => {
+//   try {
+//     const users = await User.findAll();
+//     res.status(200).json(users);
+//   } catch (error) {
+//     res.status(500).json({ message: 'Failed to fetch users' });
+//   }
+// });
 
 // Get all lists route
 router.get('/lists', async (req, res) => {

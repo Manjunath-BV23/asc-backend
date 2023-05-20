@@ -19,7 +19,7 @@ app.use(express.json());
 app.use('/', routes);
 
 app.get("/", (req, res)=> {
-    res.send("Welcome to homepage, you can post /login")
+    res.send("Welcome to homepage, you can post /user")
 })
 
 
