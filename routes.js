@@ -3,7 +3,7 @@ const router = express.Router();
 const { Task, List, User } = require('./models');
 
 // Login route
-router.post('/api/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     try {
         const newUser = await User.create(req.body);
         return res.status(200).send(newUser);
@@ -14,7 +14,7 @@ router.post('/api/login', async (req, res) => {
 
 
 // Create a new list
-router.post('/api/lists', async (req, res) => {
+router.post('/lists', async (req, res) => {
   try {
     const newList = new List({ name: req.body.name });
     await newList.save();
@@ -26,7 +26,7 @@ router.post('/api/lists', async (req, res) => {
 });
 
 // Update a task (mark as completed or move to another list)
-router.put('/api/tasks/:taskId', async (req, res) => {
+router.put('/tasks/:taskId', async (req, res) => {
   try {
     const updatedTask = await Task.findByIdAndUpdate(
       req.params.taskId,
@@ -40,7 +40,7 @@ router.put('/api/tasks/:taskId', async (req, res) => {
   }
 });
 
-router.put('/api/tasks/:taskId', async (req, res) => {
+router.put('/tasks/:taskId', async (req, res) => {
     try {
       const { taskId } = req.params;
       const { completed, listId } = req.body;
