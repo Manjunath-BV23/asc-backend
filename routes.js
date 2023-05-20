@@ -12,6 +12,36 @@ router.post('/login', async (req, res) => {
       }
 });
 
+// Get all lists route
+app.get('/user', async (req, res) => {
+  try {
+    const users = await User.findAll();
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to fetch users' });
+  }
+});
+
+// Get all lists route
+app.get('/lists', async (req, res) => {
+  try {
+    const lists = await List.findAll();
+    res.status(200).json(lists);
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to fetch lists' });
+  }
+});
+
+// Get all tasks route
+app.get('/tasks', async (req, res) => {
+  try {
+    const tasks = await Task.findAll();
+    res.status(200).json(tasks);
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to fetch tasks' });
+  }
+});
+
 
 // Create a new list
 router.post('/lists', async (req, res) => {
